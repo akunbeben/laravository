@@ -1,0 +1,22 @@
+<?php
+
+namespace DummyNamespace;
+
+use Akunbeben\Laravository\Repositories\Eloquent\BaseRepository;
+use Illuminate\Database\Eloquent\Model;
+
+class DummyClass extends BaseRepository
+{
+  protected $model;
+
+  /**
+   * Set your Model by change the 'Model' parameter to use the Eloquent
+   * 
+   * @param Model $model
+   */
+  public function __construct(Model $model)
+  {
+    $this->model = $model;
+  }
+  
+}

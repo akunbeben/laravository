@@ -1,0 +1,26 @@
+{
+    "name": "akunbeben/laravository",
+    "description": "Simplify Repository Pattern for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benny Rahmat",
+            "email": "akunbeben@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Akunbeben\\Laravository\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "akunbeben\\laravository\\LaravositoryServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
