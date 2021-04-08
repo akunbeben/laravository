@@ -3,7 +3,6 @@
 namespace Akunbeben\Laravository\Console;
 
 use Illuminate\Console\GeneratorCommand;
-use Symfony\Component\Console\Input\InputArgument;
 
 class RepositoryProviderMakeCommand extends GeneratorCommand
 {
@@ -12,18 +11,35 @@ class RepositoryProviderMakeCommand extends GeneratorCommand
    *
    * @var string
    */
-  protected $name = 'repository:install';
+  protected $name = 'repository:provider';
 
   /**
-   * Replace the class name for the given stub.
+   * The console command description.
    *
-   * @param  string  $stub
-   * @param  string  $name
+   * @var string
+   */
+  protected $description = 'Install the Repository Service Provider';
+
+  /**
+   * The type of class being generated.
+   *
+   * @var string
+   */
+  protected $type = 'Repository';
+
+  /**
+   * Get the desired class name from the input.
+   *
    * @return string
    */
-  protected function replaceClass($stub, $name = 'RepositoryServiceProvider')
+  protected function getNameInput()
   {
-    $stub = parent::replaceClass($stub, $name);
+    return 'RepositoryServiceProvider';
+  }
+
+  protected function getArguments()
+  {
+    return [];
   }
 
   /**
