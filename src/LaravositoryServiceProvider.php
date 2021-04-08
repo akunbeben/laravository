@@ -2,6 +2,7 @@
 
 namespace Akunbeben\Laravository;
 
+use Akunbeben\Laravository\Console\InterfaceMakeCommand;
 use Akunbeben\Laravository\Console\RepositoryProviderMakeCommand;
 use Akunbeben\Laravository\Console\RepositoryMakeCommand;
 use Illuminate\Support\ServiceProvider;
@@ -27,6 +28,7 @@ class LaravositoryServiceProvider extends ServiceProvider
     {
         $this->commands(RepositoryProviderMakeCommand::class);
         $this->commands(RepositoryMakeCommand::class);
+        $this->commands(InterfaceMakeCommand::class);
     }
 
 }

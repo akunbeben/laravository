@@ -25,7 +25,7 @@ class RepositoryProviderMakeCommand extends GeneratorCommand
    *
    * @var string
    */
-  protected $type = 'Repository';
+  protected $type = 'Provider';
 
   /**
    * Get the desired class name from the input.

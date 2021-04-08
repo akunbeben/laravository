@@ -1,20 +1,22 @@
 <?php
 
-namespace DummyNamespace;
+namespace {{ namespace }};
 
 use Akunbeben\Laravository\Repositories\Eloquent\BaseRepository;
-use Illuminate\Database\Eloquent\Model;
 
-class DummyClass extends BaseRepository
+use App\Repositories\Interfaces\{{ class }}Interface;
+use App\Models\NamespacedDummyUserModel;
+
+class {{ class }} extends BaseRepository implements {{ class }}Interface
 {
   protected $model;
 
   /**
-   * Set your Model by change the 'Model' parameter to use the Eloquent
+   * Your model to use the Eloquent
    * 
-   * @param Model $model
+   * @param NamespacedDummyUserModel $model
    */
-  public function __construct(Model $model)
+  public function __construct(NamespacedDummyUserModel $model)
   {
     $this->model = $model;
   }
