@@ -42,9 +42,16 @@ Akunbeben\Laravository\Repositories\Interfaces
 
 ## Usage
 ### Create a new Repository
-To create repository, you just need to run like this: `php artisan make:repository User`
+To create repository, you just need to run like this: 
+```
+php artisan make:repository User
+```
 
-You can also add `-m` or `--model` option to generate the Model: `php artisan make:repository User -m`, so you don't need to create Model manually.
+You can also add `-m` or `--model` option to generate the Model: 
+```
+php artisan make:repository User -m
+```
+So you don't need to create Model manually.
 
 You can find out the generated files under the App\Repositories\ folder:
 
