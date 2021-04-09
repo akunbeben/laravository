@@ -22,7 +22,7 @@ Go to the `config/app.php` and add this `App\Providers\RepositoryServiceProvider
 
 The `RepositoryServiceProvider` will work as Dependency Injection.
 
-``` 
+```php
 'providers' => [
   ...
   App\Providers\RepositoryServiceProvider::class,
@@ -59,7 +59,7 @@ You can find out the generated files under the App\Repositories\ folder:
 - Interface: App\Repositories\Interfaces\
 
 #### UserRepository.php
-```
+```php
 namespace App\Repositories\Eloquent;
 
 use Akunbeben\Laravository\Repositories\Eloquent\BaseRepository;
@@ -84,7 +84,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 ```
 
 #### UserRepositoryInterface.php
-```
+```php
 namespace App\Repositories\Interfaces;
 
 interface UserRepositoryInterface
@@ -95,7 +95,7 @@ interface UserRepositoryInterface
 
 After you created the repositories. you need to register your Class and Interface in the `RepositoryServiceProvider.php`
 
-```
+```php
 ...
 class RepositoryServiceProvider extends ServiceProvider
 {
