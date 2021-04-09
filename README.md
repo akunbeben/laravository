@@ -107,3 +107,40 @@ class RepositoryServiceProvider extends ServiceProvider
   }
 }
 ```
+
+Now you can implement it to your Controller. Like this example below:
+
+```php
+namespace App\Http\Controllers;
+
+use App\Repositories\Interfaces\UserRepositoryInterface;
+
+class UserController extends Controller
+{
+  protected $userRepository;
+
+  public function __construct(UserRepositoryInterface $userRepository) {
+    $this->userRepository = $userRepository;
+  }
+}
+
+```
+
+So your Controller will much cleaner and much shorter.
+```php
+class UserController extends Controller
+{
+  protected $userRepository;
+
+  public function __construct(UserRepositoryInterface $userRepository) {
+    $this->userRepository = $userRepository;
+  }
+
+  ...
+
+  public function store(SomeFormRequest $request)
+  {
+    return $this->userRepository->create($request->validated());
+  }
+}
+```
