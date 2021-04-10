@@ -2,7 +2,9 @@
 
 namespace {{ namespace }};
 
-interface {{ class }}
+use Akunbeben\Laravository\Repositories\Interfaces\BaseRepositoryInterface;
+
+interface {{ class }} extends BaseRepositoryInterface
 {
     
 }
