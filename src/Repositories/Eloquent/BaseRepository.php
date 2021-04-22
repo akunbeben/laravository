@@ -7,79 +7,79 @@ use Illuminate\Database\Eloquent\Model;
 
 class BaseRepository implements BaseRepositoryInterface
 {
-  protected $model;
+    protected $model;
 
-  /**
-   * Set Model to use the Eloquent
-   * 
-   * @param Model $model
-   */
-  public function __construct(Model $model)
-  {
-    $this->model = $model;
-  }
+    /**
+     * Set Model to use the Eloquent
+     * 
+     * @param Model $model
+     */
+    public function __construct(Model $model)
+    {
+        $this->model = $model;
+    }
 
-  /**
-   * Retrieve all data of the Collection
-   * 
-   * @return Illuminate\Database\Eloquent\Collection
-   */
-  public function getAll()
-  {
-    return $this->model->all();
-  }
+    /**
+     * Retrieve all data of the Collection
+     * 
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function getAll()
+    {
+        return $this->model->all();
+    }
 
-  /**
-   * Retrieve specific data by $id
-   * 
-   * @param integer $id
-   * @param array $relations
-   * 
-   * @return Illuminate\Database\Eloquent\Collection
-   */
-  public function getById($id, $relations = null)
-  {
-    if ($relations != null) $this->model = $this->model->with($relations);
-    
-    $this->model = $this->model->find($id);
+    /**
+     * Retrieve specific data by $id
+     * 
+     * @param integer $id
+     * @param array $relations
+     * 
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function getById($id, $relations = null)
+    {
+        if ($relations != null) $this->model = $this->model->with($relations);
 
-    return $this->model;
-  }
+        $this->model = $this->model->find($id);
 
-  /**
-   * Create new record through mass assignment
-   * 
-   * @param Illuminate\Http\Request $attributes
-   * 
-   * @return Illuminate\Database\Eloquent\Collection
-   */
-  public function create($attributes)
-  {
-    return $this->model->create($attributes);
-  }
+        return $this->model;
+    }
 
-  /**
-   * Get specific record and update through mass assignment
-   * 
-   * @param integer $id
-   * @param Illuminate\Http\Request $attributes
-   * 
-   * @return Illuminate\Database\Eloquent\Collection
-   */
-  public function update($id, $attributes)
-  {
-    return $this->getById($id)->update($attributes);
-  }
+    /**
+     * Create new record through mass assignment
+     * 
+     * @param Illuminate\Http\Request $attributes
+     * 
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function create($attributes)
+    {
+        return $this->model->create($attributes);
+    }
 
-  /**
-   * Delete specific record by $id
-   * 
-   * @param integer $id
-   * 
-   * @return void
-   */
-  public function delete($id)
-  {
-    $this->getById($id)->delete();
-  }
+    /**
+     * Get specific record and update through mass assignment
+     * 
+     * @param integer $id
+     * @param Illuminate\Http\Request $attributes
+     * 
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function update($id, $attributes)
+    {
+        return $this->getById($id)->update($attributes);
+    }
+
+    /**
+     * Delete specific record by $id
+     * 
+     * @param integer $id
+     * 
+     * @return void
+     */
+    public function delete($id)
+    {
+        $this->getById($id)->delete();
+    }
 }

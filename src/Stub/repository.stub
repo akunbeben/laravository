@@ -9,16 +9,16 @@ use App\Models\NamespacedDummyUserModel;
 
 class {{ class }} extends BaseRepository implements {{ class }}Interface
 {
-  protected $model;
+    protected $model;
 
-  /**
-   * Your model to use the Eloquent
-   * 
-   * @param NamespacedDummyUserModel $model
-   */
-  public function __construct(NamespacedDummyUserModel $model)
-  {
-    $this->model = $model;
-  }
-  
+    /**
+    * Your model to use the Eloquent
+    * 
+    * @param NamespacedDummyUserModel $model
+    */
+    public function __construct(NamespacedDummyUserModel $model)
+    {
+        $this->model = $model;
+    }
+    
 }
